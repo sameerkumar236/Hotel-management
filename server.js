@@ -25,7 +25,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/person",router);
 app.use("/login",loginrouter);
 
-
+ 
 app.listen(port,(req,res)=>{
     console.log(`Server is running at ${port}`)
 })
