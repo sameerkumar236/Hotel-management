@@ -1,6 +1,7 @@
 import express from "express";
 import router from "./Routes/personRoutes.js"
 import loginrouter from "./Routes/Login.js"
+import roomsrouter from "./Routes/RoomsRoutes.js"
 import swaggerUi from "swagger-ui-express";
 import cors from "cors";
 import passport from "./auth.js";
@@ -22,10 +23,11 @@ app.get("/",(req,res)=>{
 // Swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+app.use("/upload", express.static("upload"));
 app.use("/person",router);
 app.use("/login",loginrouter);
+app.use("/room",roomsrouter);
 
- 
 app.listen(port,(req,res)=>{
     console.log(`Server is running at ${port}`)
 })
