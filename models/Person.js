@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
 const personSchema = new mongoose.Schema({
