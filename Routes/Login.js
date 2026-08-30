@@ -41,8 +41,7 @@ const LocalAuthMiddleware = passport.authenticate("local", {
 router.post("/", LocalAuthMiddleware, (req, res) => {
    try {
      res.status(200).json({
-        message: "Login successful",
-        user: req.user
+        message: "Login successful"
     });
    } catch (error) {
           console.log(error)
