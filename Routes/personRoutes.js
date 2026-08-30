@@ -52,8 +52,11 @@ router.post("/", async (req, res) => {
         const storedata = new Person(data);
 
         const createuser = await storedata.save();
+        
+         const user = createuser.toObject();
+         delete user.password;
 
-        res.status(200).json(createuser);
+        res.status(200).json(user);
 
         console.log("user created");
 
